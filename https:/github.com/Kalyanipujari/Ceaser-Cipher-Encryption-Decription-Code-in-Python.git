@@ -1,0 +1,26 @@
+def en(text, k):  
+    temp = ""  
+    for i in range(len(text)):  
+        ch = text[i]  
+        if (ch.isupper()):  
+            temp += chr((ord(ch) + k - 64) % 26 + 65)  
+        else:  
+            temp += chr((ord(ch) + k - 96) % 26 + 97) 
+    return temp
+
+def den(txt, n):  
+    emp = ""  
+    for i in range(len(txt)):  
+        ch = txt[i]  
+        if (ch.isupper()):  
+            emp += chr((ord(ch) - n + 64) % 26 + 65)  
+        else:  
+            emp += chr((ord(ch) - n + 96) % 26 + 97)  
+    return emp
+    
+text=input("Plain text :")
+k = int(input("Enter key for Encryption: "))
+txt=en(text, k)
+print("Cipher text : " + txt)
+n=int(input("Enter key for Decription : "))
+print("Plain text : "+den(txt,n))
