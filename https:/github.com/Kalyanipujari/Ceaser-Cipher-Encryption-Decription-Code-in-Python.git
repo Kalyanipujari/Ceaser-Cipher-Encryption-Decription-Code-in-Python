@@ -15,9 +15,9 @@ def den(txt, n):
         if (ch.isupper()):  
             emp += chr((ord(ch) - n + 64) % 26 + 65)  
         else:  
-            emp += chr((ord(ch) - n + 96) % 26 + 97)  
+            emp += chr((ord(ch) - n - 97) % 26 + 96)  
     return emp
-    
+
 text=input("Plain text :")
 k = int(input("Enter key for Encryption: "))
 txt=en(text, k)
